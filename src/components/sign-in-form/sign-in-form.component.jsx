@@ -37,10 +37,19 @@ const SignInForm = () => {
             console.log(response);
             
         } catch (error) {
-            
-            
+
+            switch(error.code){
+                case 'auth/wrong-password':
+                    alert("incorrect password for email");
+                    break
+                case 'auth/user-not-found':
+                    alert("no user associated with this email");
+                    break;
+                default:
+                    console.log(error);
+            }            
         }
-    }
+    };
 
     const handleChange = (event) => {
         const {name, value} = event.target;
@@ -57,7 +66,7 @@ const SignInForm = () => {
                 <FormInput label="Password" type="password" required onChange={handleChange} name="password" value={password}/>                
                 <div className="buttons-container">
                     <Button type="submit">Sign In</Button>
-                    <Button buttonType="google" onClick={signInWithGoogle}>Google sign in</Button>
+                    <Button type="button" buttonType="google" onClick={signInWithGoogle}>Google sign in</Button>
                 </div>
             </form>
         </div>
