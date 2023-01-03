@@ -1,5 +1,5 @@
 import { CART_ACTION_TYPES } from "./cart.types";
-import { createAction } from "../../utils/firebase/reducer.utils";
+import { createAction } from "../../utils/reducer/reducer.utils";
 
 const addCartItem = (cartItems, productToAdd) => {
     //find if cartItems contains productToAdd
