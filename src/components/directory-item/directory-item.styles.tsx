@@ -23,6 +23,13 @@ export const Body = styled.div`
   background-color: white;
   opacity: 0.7;
   position: absolute;
+  
+  text-align: center;
+  @media screen and (max-width: 800px) {
+    padding-top: 10px;
+    width: 120px;
+    height: 100px;
+  }
   h2 {
     font-weight: bold;
     margin: 0 6px 0;
